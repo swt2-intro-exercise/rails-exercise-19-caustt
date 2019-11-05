@@ -8,7 +8,7 @@ describe "Author page", type: :feature do
   
   it "should show text" do
     visit author_path(@author)
-    expect(page).to have_text("Fist Name")
+    expect(page).to have_text(@author.first_name)
   end
 
 end
