@@ -22,7 +22,7 @@ describe 'New author', type: :model do
 
 	it 'should have a method name which returns the full name of an author' do
 
-		expect(@author.name).to eq(@first_name + @last_name)
+		expect(@author.name).to eq(@first_name + ' ' + @last_name)
 
 	end
 	
