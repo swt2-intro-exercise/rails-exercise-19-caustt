@@ -4,11 +4,11 @@ describe 'New author', type: :model do
 
 	before :each do
 
-		@firt_name = 'Alan'
+		@first_name = 'Alan'
 		@last_name = 'Turing'
-		@homepage = 'http://wikipedia.de/Alan_Turing'
+		@homepage = '"http://wikipedia.de/Alan_Turing"'
 
-		@author = Author.new first_name last_name homepage
+		@author = Author.new(first_name: @first_name, last_name: @last_name, homepage: @homepage)
 
 	end
 
