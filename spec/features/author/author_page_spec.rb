@@ -6,9 +6,10 @@ describe "Author page", type: :feature do
 		@author = create(:author)
 	end
   
-  it "should show text" do
+  it "should render and show text" do
     visit author_path(@author)
     expect(page).to have_text(@author.first_name)
+    expect(page).to have_text(@author.homepage)
   end
 
 end
