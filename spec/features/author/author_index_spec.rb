@@ -25,14 +25,16 @@ describe "Author Index Page", type: :feature do
   end
 
   it "should have a link to delete the author" do
-  	#expect(page).to have_selector("a[data-method=delete][href=#{author_path(@author)}]")#, href: author_path(@author)
-
   	expect(page).to have_selector("a[data-method='delete'][href='#{author_path(@author)}']")
-  	#				 {"data-method" => "delete"})
-
-  	#expect(find_link(nil, author_path(@author))["data-method"]).to eq('delete')
-
   end
+
+  it "should delete an author when the delete link is clicked" do
+  	@count = Author.count
+  	page.find(:css, "a[data-method='delete'][href='#{author_path(@author)}']").click
+  	expect(Author.count).to eq (@count -1)
+  end
+
+
 
 
 end
