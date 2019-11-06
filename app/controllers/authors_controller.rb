@@ -27,7 +27,7 @@ class AuthorsController < ApplicationController
   def update
     @author = Author.find(params[:id])
 
-    if(@author.update(post_params))
+    if(@author.update(author_params))
       redirect_to @author 
     else
       render :new
@@ -40,8 +40,6 @@ class AuthorsController < ApplicationController
 
     redirect_to authors_path
   end
-
-
 
   private def author_params
   	params.require(:author).permit(:first_name, :last_name, :homepage)
