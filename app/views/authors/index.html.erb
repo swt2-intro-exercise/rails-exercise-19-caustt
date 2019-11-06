@@ -10,6 +10,8 @@
 		<td><%= link_to author.first_name, author %></td>
 		<td><%= author.last_name %></td>
 		<td><%= author.homepage %></td>
+		<td><%= link_to "Edit", edit_author_path(author) %></td>
+
 	</tr>
 <% end %>
 </table>
