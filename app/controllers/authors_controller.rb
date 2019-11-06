@@ -7,7 +7,7 @@ class AuthorsController < ApplicationController
   	@author = Author.new()
   end
   def create
-  	@author = Author.new(post_params)
+  	@author = Author.new(author_params)
 
   	if @author.save
   	  redirect_to @author
@@ -34,8 +34,16 @@ class AuthorsController < ApplicationController
     end
   end
 
+  def destroy
+    @author = Author.find(params[:id])
+    @author.destroy
 
-  private def post_params
+    redirect_to authors_path
+  end
+
+
+
+  private def author_params
   	params.require(:author).permit(:first_name, :last_name, :homepage)
   end
 end
