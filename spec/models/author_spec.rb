@@ -26,7 +26,7 @@ describe 'New author', type: :model do
 
 	end
 
-	it "creation should fail, when creating an author withour last name" do
+	it "creation should fail, when creating an author without last name" do
 
 
 		@first_name = 'Alan'

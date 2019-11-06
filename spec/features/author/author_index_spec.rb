@@ -22,8 +22,5 @@ describe "Author Index Page", type: :feature do
 
 
 
-
-
-
 end
 
