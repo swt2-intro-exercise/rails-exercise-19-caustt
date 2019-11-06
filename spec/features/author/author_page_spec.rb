@@ -14,7 +14,7 @@ describe "Author page", type: :feature do
 
   it "should have link to the authors edit page" do
   	visit author_path(@author)
-  	expect(page).to have_link href: edit_author_path(@author)
+  	expect(page).to have_link nil, href: edit_author_path(@author)
 
   end
 
