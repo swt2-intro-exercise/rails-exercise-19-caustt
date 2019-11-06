@@ -12,4 +12,10 @@ describe "Author page", type: :feature do
     expect(page).to have_text(@author.homepage)
   end
 
+  it "should have link to the authors edit page" do
+  	visit author_path(@author)
+  	expect(page).to have_link "Edit", href: edit_author_path(@author)
+
+  end
+
 end
