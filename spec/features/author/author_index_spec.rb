@@ -24,6 +24,11 @@ describe "Author Index Page", type: :feature do
   	expect(page).to have_link nil, href: edit_author_path(@author)
   end
 
+  it "should have a link to delete the author" do
+  	expect(page).to have_selector("a", :href => author_path(@author),
+  					 "data-method" => "delete")
+  end
+
 
 end
 
