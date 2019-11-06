@@ -24,4 +24,14 @@ describe "New author page", type: :feature do
   	find('input[type="submit"]').click
   	expect(Author.find_by(first_name: "Alan").last_name).to eql "Turing"
   end
+
+  it "should print error, when user only submits first name and homepage" do
+    visit new_author_path
+    page.fill_in 'author[first_name]', with: 'Alan'
+    page.fill_in 'author[homepage]', with: 'http://wikipedia.org/Alan_Turing'
+    find('input[type="submit"]').click
+    expect(page).to have_text('error')
+
+  end
+
 end
