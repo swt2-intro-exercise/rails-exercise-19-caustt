@@ -1,4 +1,11 @@
 <%= form_with scope: :author, url: authors_path do |form| %>
+
+<% if @author.errors.any? %>
+    <% @author.errors.full_messages.each do |msg| %>
+       <%="Error: " +  msg %>
+    <% end %>
+  <% end %>
+
   <p>
     <%= form.label :first_name %><br>
     <%= form.text_field :first_name %>
