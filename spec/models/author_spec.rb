@@ -25,5 +25,18 @@ describe 'New author', type: :model do
 		expect(@author.name).to eq(@first_name + ' ' + @last_name)
 
 	end
+
+	it "creation should fail, when creating an author withour last name" do
+
+
+		@first_name = 'Alan'
+		@homepage = '"http://wikipedia.de/Alan_Turing"'
+
+		@author = Author.new(first_name: @first_name, homepage: @homepage)
+
+		expect(@author).to_not be_valid
+
+	end
+
 	
 end
