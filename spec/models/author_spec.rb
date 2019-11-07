@@ -38,5 +38,8 @@ describe 'New author', type: :model do
 
 	end
 
+	it "should have an empty list of papers" do 
+  	expect(@paper.papers).to be_empty
+  end
 	
 end
